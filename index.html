@@ -13,7 +13,14 @@
 <body>
     <header>
         <nav>
-            <h1 class="logo">Food & Flow</h1>
+            <div class="logo-container">
+                <div class="header-brand-icons">
+                    <img src="docs/bowl.png" alt="Bowl" class="floating-icon icon-bowl">
+                    <img src="docs/dog.png" alt="Dog" class="floating-icon icon-dog">
+                    <img src="docs/TruckMapIcon.png" alt="Truck" class="floating-icon icon-truck">
+                </div>
+                <h1 class="logo">Food & Flow</h1>
+            </div>
             <ul>
                 <li><a href="#hero" data-lang="es">Inicio</a><a href="#hero" data-lang="en" class="lang-hidden">Home</a></li>
                 <li><a href="#about" data-lang="es">Nosotros</a><a href="#about" data-lang="en" class="lang-hidden">About</a></li>
@@ -44,7 +51,7 @@
                 <div class="limited-badge" data-lang="es">Orgullosamente Mexicano</div>
                 <div class="limited-badge lang-hidden" data-lang="en">Proudly Mexican</div>
                 <h1 class="hero-title">Food & Flow</h1>
-                <img src="docs/Truck.png" alt="Food & Flow Truck" class="hero-truck-inline">
+                <img src="docs/TruckFoodFlow.png" alt="Food & Flow Truck" class="hero-truck-inline">
                 <p class="tagline" data-lang="es">Inteligente. Sostenible. Delicioso.</p>
                 <p class="tagline lang-hidden" data-lang="en">Smart. Sustainable. Delicious.</p>
                 <a href="#location" class="cta-button" data-lang="es">Encuéntranos Hoy</a>
@@ -63,21 +70,21 @@
                 
                 <div class="values-grid">
                     <div class="value-card">
-                        <div class="value-icon">🌱</div>
+                        <div class="value-icon"><img src="docs/arbol.png" alt="Árbol de ingredientes" style="width: 104px; height: 104px; object-fit: contain;"></div>
                         <h3 data-lang="es">40% Menos Desperdicio</h3>
                         <h3 class="lang-hidden" data-lang="en">40% Less Food Waste</h3>
                         <p data-lang="es">Abastecimiento inteligente y control de porciones reducen el desperdicio manteniendo los sabores frescos.</p>
                         <p class="lang-hidden" data-lang="en">Smart sourcing and portion control reduce waste while keeping flavors fresh.</p>
                     </div>
                     <div class="value-card">
-                        <div class="value-icon">♻️</div>
+                        <div class="value-icon"><img src="docs/recycle.png" alt="Reciclaje" style="width: 104px; height: 104px; object-fit: contain;"></div>
                         <h3 data-lang="es">Envases 100% Compostables</h3>
                         <h3 class="lang-hidden" data-lang="en">100% Compostable Packaging</h3>
                         <p data-lang="es">Cada contenedor, envoltorio y utensilio regresa a la tierra, no al vertedero.</p>
                         <p class="lang-hidden" data-lang="en">Every container, wrapper, and utensil returns to the earth, not the landfill.</p>
                     </div>
                     <div class="value-card">
-                        <div class="value-icon">🌍</div>
+                        <div class="value-icon"><img src="docs/mundo.png" alt="Mundo" style="width: 104px; height: 104px; object-fit: contain;"></div>
                         <h3 data-lang="es">Compensación de Carbono: 100 toneladas/año</h3>
                         <h3 class="lang-hidden" data-lang="en">Carbon Offset: 100 tons/year</h3>
                         <p data-lang="es">Compensamos toda nuestra huella de carbono a través de programas ambientales verificados.</p>
@@ -97,37 +104,112 @@
                 <p class="menu-note lang-hidden" data-lang="en">Menu rotates weekly based on seasonal ingredients</p>
                 
                 <div class="menu-grid">
+                    <!-- Card 1 -->
                     <div class="menu-card">
-                        <h3 data-lang="es">La Máquina Verde</h3>
-                        <h3 class="lang-hidden" data-lang="en">The Green Machine</h3>
-                        <p class="menu-description" data-lang="es">Aguacate cremoso, brotes frescos y queso crema de hierbas en un bowl integral.</p>
-                        <p class="menu-description lang-hidden" data-lang="en">Creamy avocado, fresh sprouts, and herb cream cheese on a whole grain bowl.</p>
-                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
-                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                        <div class="menu-card-inner">
+                            <div class="menu-card-front">
+                                <h3 data-lang="es">La Máquina Verde</h3>
+                                <h3 class="lang-hidden" data-lang="en">The Green Machine</h3>
+                                <p class="menu-description" data-lang="es">Aguacate cremoso, brotes frescos y queso crema de hierbas en un bowl integral.</p>
+                                <p class="menu-description lang-hidden" data-lang="en">Creamy avocado, fresh sprouts, and herb cream cheese on a whole grain bowl.</p>
+                                <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                                <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                            </div>
+                            <div class="menu-card-back">
+                                <h3 data-lang="es">Información Nutricional</h3>
+                                <h3 class="lang-hidden" data-lang="en">Nutrition Facts</h3>
+                                <ul class="nutrition-list">
+                                    <li><span>Calorías / Calories</span> <span>450 kcal</span></li>
+                                    <li><span>Proteína / Protein</span> <span>28g</span></li>
+                                    <li><span>Grasas / Fat</span> <span>18g</span></li>
+                                    <li><span>Carbs</span> <span>32g</span></li>
+                                    <li><span>Azúcares / Sugars</span> <span>5g</span></li>
+                                </ul>
+                                <span class="tap-hint" data-lang="es">Toca para volver</span>
+                                <span class="tap-hint lang-hidden" data-lang="en">Tap to flip back</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Card 2 -->
                     <div class="menu-card">
-                        <h3 data-lang="es">Poder Proteico</h3>
-                        <h3 class="lang-hidden" data-lang="en">Protein Power</h3>
-                        <p class="menu-description" data-lang="es">Salmón ahumado, huevo de gallinas libres, hierbas frescas y una suave crema de eneldo.</p>
-                        <p class="menu-description lang-hidden" data-lang="en">Smoked salmon, free-range egg, fresh herbs, and a light dill spread.</p>
-                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
-                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                        <div class="menu-card-inner">
+                            <div class="menu-card-front">
+                                <h3 data-lang="es">Poder Proteico</h3>
+                                <h3 class="lang-hidden" data-lang="en">Protein Power</h3>
+                                <p class="menu-description" data-lang="es">Salmón ahumado, huevo de gallinas libres, hierbas frescas y una suave crema de eneldo.</p>
+                                <p class="menu-description lang-hidden" data-lang="en">Smoked salmon, free-range egg, fresh herbs, and a light dill spread.</p>
+                                <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                                <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                            </div>
+                            <div class="menu-card-back">
+                                <h3 data-lang="es">Información Nutricional</h3>
+                                <h3 class="lang-hidden" data-lang="en">Nutrition Facts</h3>
+                                <ul class="nutrition-list">
+                                    <li><span>Calorías / Calories</span> <span>520 kcal</span></li>
+                                    <li><span>Proteína / Protein</span> <span>35g</span></li>
+                                    <li><span>Grasas / Fat</span> <span>22g</span></li>
+                                    <li><span>Carbs</span> <span>28g</span></li>
+                                    <li><span>Azúcares / Sugars</span> <span>4g</span></li>
+                                </ul>
+                                <span class="tap-hint" data-lang="es">Toca para volver</span>
+                                <span class="tap-hint lang-hidden" data-lang="en">Tap to flip back</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Card 3 -->
                     <div class="menu-card">
-                        <h3 data-lang="es">Dulce Comienzo</h3>
-                        <h3 class="lang-hidden" data-lang="en">Sweet Start</h3>
-                        <p class="menu-description" data-lang="es">Mantequilla de almendras, plátano en rodajas, miel local y una pizca de semillas de chía.</p>
-                        <p class="menu-description lang-hidden" data-lang="en">Almond butter, sliced banana, local honey, and a sprinkle of chia seeds.</p>
-                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
-                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                        <div class="menu-card-inner">
+                            <div class="menu-card-front">
+                                <h3 data-lang="es">Dulce Comienzo</h3>
+                                <h3 class="lang-hidden" data-lang="en">Sweet Start</h3>
+                                <p class="menu-description" data-lang="es">Mantequilla de almendras, plátano en rodajas, miel local y una pizca de semillas de chía.</p>
+                                <p class="menu-description lang-hidden" data-lang="en">Almond butter, sliced banana, local honey, and a sprinkle of chia seeds.</p>
+                                <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                                <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                            </div>
+                            <div class="menu-card-back">
+                                <h3 data-lang="es">Información Nutricional</h3>
+                                <h3 class="lang-hidden" data-lang="en">Nutrition Facts</h3>
+                                <ul class="nutrition-list">
+                                    <li><span>Calorías / Calories</span> <span>380 kcal</span></li>
+                                    <li><span>Proteína / Protein</span> <span>29g</span></li>
+                                    <li><span>Grasas / Fat</span> <span>15g</span></li>
+                                    <li><span>Carbs</span> <span>31g</span></li>
+                                    <li><span>Azúcares / Sugars</span> <span>7g</span></li>
+                                </ul>
+                                <span class="tap-hint" data-lang="es">Toca para volver</span>
+                                <span class="tap-hint lang-hidden" data-lang="en">Tap to flip back</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Card 4 -->
                     <div class="menu-card">
-                        <h3 data-lang="es">Fresco del Jardín</h3>
-                        <h3 class="lang-hidden" data-lang="en">Garden Fresh</h3>
-                        <p class="menu-description" data-lang="es">Verduras asadas, hummus, rúcula y un aderezo de tahini ácido.</p>
-                        <p class="menu-description lang-hidden" data-lang="en">Roasted vegetables, hummus, arugula, and a tangy tahini drizzle.</p>
-                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
-                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                        <div class="menu-card-inner">
+                            <div class="menu-card-front">
+                                <h3 data-lang="es">Fresco del Jardín</h3>
+                                <h3 class="lang-hidden" data-lang="en">Garden Fresh</h3>
+                                <p class="menu-description" data-lang="es">Verduras asadas, hummus, rúcula y un aderezo de tahini ácido.</p>
+                                <p class="menu-description lang-hidden" data-lang="en">Roasted vegetables, hummus, arugula, and a tangy tahini drizzle.</p>
+                                <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                                <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                            </div>
+                            <div class="menu-card-back">
+                                <h3 data-lang="es">Información Nutricional</h3>
+                                <h3 class="lang-hidden" data-lang="en">Nutrition Facts</h3>
+                                <ul class="nutrition-list">
+                                    <li><span>Calorías / Calories</span> <span>320 kcal</span></li>
+                                    <li><span>Proteína / Protein</span> <span>28g</span></li>
+                                    <li><span>Grasas / Fat</span> <span>12g</span></li>
+                                    <li><span>Carbs</span> <span>30g</span></li>
+                                    <li><span>Azúcares / Sugars</span> <span>6g</span></li>
+                                </ul>
+                                <span class="tap-hint" data-lang="es">Toca para volver</span>
+                                <span class="tap-hint lang-hidden" data-lang="en">Tap to flip back</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -290,6 +372,84 @@
                     <img src="docs/dog.png" alt="Mascota Food & Flow" class="pet-icon">
                     <p data-lang="es"><strong>¡Mascotas Bienvenidas!</strong> Tazones de agua fresca siempre disponibles.</p>
                     <p class="lang-hidden" data-lang="en"><strong>Pups Welcome!</strong> Fresh water bowls always available.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <h2 class="section-title" data-lang="es">Lo que dicen nuestros Foodies</h2>
+                <h2 class="section-title lang-hidden" data-lang="en">What our Foodies say</h2>
+                
+                <div class="testimonial-feed">
+                    <!-- Testimonial 1 -->
+                    <div class="instagram-card">
+                        <div class="instagram-header">
+                            <div class="instagram-profile-pic">
+                                <img src="docs/PacoenMovimiento.jpeg" alt="Paco">
+                            </div>
+                            <div class="instagram-user-info">
+                                <span class="username">pacoenmovimiento</span>
+                                <span class="location">Parque México, CDMX</span>
+                            </div>
+                            <div class="instagram-menu">...</div>
+                        </div>
+                        <div class="instagram-image">
+                            <img src="docs/PacoenMovimiento.jpeg" alt="Paco disfrutando">
+                        </div>
+                        <div class="instagram-actions">
+                            <div class="action-left">
+                                <span class="heart-icon">❤️</span>
+                                <span class="comment-icon">💬</span>
+                                <span class="share-icon">🚀</span>
+                            </div>
+                            <div class="action-right">
+                                <span class="save-icon">🔖</span>
+                            </div>
+                        </div>
+                        <div class="instagram-likes">
+                            Le gusta a <strong>ana_active</strong> y <strong>342 personas más</strong>
+                        </div>
+                        <div class="instagram-content">
+                            <p><span class="username">pacoenmovimiento</span> ¡Después de trotar 5.2 km, esto es justo lo que necesitaba! 🚴‍♂️ Energía limpia para seguir moviéndome. ¡El bowl de quinoa es otro nivel! 🥣✨ #FoodAndFlow #PacoEnMovimiento #Sostenible #HealthyFood</p>
+                        </div>
+                        <div class="instagram-date">HACE 2 HORAS</div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="instagram-card">
+                        <div class="instagram-header">
+                            <div class="instagram-profile-pic">
+                                <img src="docs/analaactiva.jpg" alt="Ana">
+                            </div>
+                            <div class="instagram-user-info">
+                                <span class="username">analaactiva</span>
+                                <span class="location">Zona T, Bogotá</span>
+                            </div>
+                            <div class="instagram-menu">...</div>
+                        </div>
+                        <div class="instagram-image">
+                            <img src="docs/analaactiva.jpg" alt="Ana activa">
+                        </div>
+                        <div class="instagram-actions">
+                            <div class="action-left">
+                                <span class="heart-icon">❤️</span>
+                                <span class="comment-icon">💬</span>
+                                <span class="share-icon">🚀</span>
+                            </div>
+                            <div class="action-right">
+                                <span class="save-icon">🔖</span>
+                            </div>
+                        </div>
+                         <div class="instagram-likes">
+                            Le gusta a <strong>pacoenmovimiento</strong> y <strong>521 personas más</strong>
+                        </div>
+                        <div class="instagram-content">
+                            <p><span class="username">analaactiva</span> ¡Por fin algo rico y que cuida el planeta! 🌍✨ Me encanta saber que mi comida no genera desperdicios. ¡Ya quiero que abran más puntos! 😍🧘‍♀️ #AnaLaActiva #ZeroWaste #FoodAndFlow #ComidaReal</p>
+                        </div>
+                         <div class="instagram-date">HACE 5 HORAS</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -673,6 +833,27 @@
 
             // Initialize waitlist count
             loadWaitlistCount();
+
+            // Card Flip Logic
+            document.querySelectorAll('.nutrition-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation(); // Prevent bubbling if card click is also handled
+                    const card = this.closest('.menu-card');
+                    if (card) {
+                        card.classList.add('flipped');
+                    }
+                });
+            });
+
+            // Flip back when clicking anywhere on the back of the card
+            document.querySelectorAll('.menu-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (this.classList.contains('flipped')) {
+                        this.classList.remove('flipped');
+                    }
+                });
+            });
         });
     </script>
 </body>

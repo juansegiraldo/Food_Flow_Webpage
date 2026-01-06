@@ -88,10 +88,10 @@ ul { list-style: none; }
 /* Header & Nav */
 header {
     background-color: var(--secondary);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     border-bottom: 3px solid var(--primary);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
@@ -105,15 +105,28 @@ nav {
     align-items: center;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-brand-icons {
+    display: none; /* Hide floating icons in header to prevent layout invasion */
+}
+
 .logo {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary);
     text-shadow: 2px 2px 0 var(--pop-mint);
+    margin: 0;
 }
 
 nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0;
 }
 
 nav a {
@@ -338,15 +351,54 @@ nav a:hover::after {
 }
 
 .menu-card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: var(--border-radius-retro);
-    border: 2px solid var(--accent);
-    position: relative;
-    overflow: hidden;
+    background-color: transparent;
+    perspective: 1000px;
+    height: 100%; /* Ensure it fills grid cell */
+    min-height: 380px; /* Reduced min-height */
 }
 
-.menu-card::before {
+.menu-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: grid; /* Use grid to stack faces */
+    grid-template-areas: "face";
+}
+
+.menu-card.flipped .menu-card-inner {
+    transform: rotateY(180deg);
+}
+
+.menu-card-front, .menu-card-back {
+    grid-area: face; /* Stack them */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    background-color: var(--white);
+    padding: 1.5rem; /* Reduced padding */
+    border-radius: var(--border-radius-retro);
+    border: 2px solid var(--accent);
+    position: relative; 
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card-front {
+    /* Removed specific height settings as grid handles it */
+}
+
+.menu-card-back {
+    transform: rotateY(180deg);
+}
+
+.menu-card-front::before, .menu-card-back::before {
     content: '';
     position: absolute;
     top: 0;
@@ -356,13 +408,48 @@ nav a:hover::after {
     background-color: var(--pop-mint);
 }
 
-.menu-card:nth-child(2n)::before {
+.menu-card:nth-child(2n) .menu-card-front::before,
+.menu-card:nth-child(2n) .menu-card-back::before {
     background-color: var(--pop-coral);
 }
 
 .menu-card h3 {
     margin-bottom: 0.5rem;
     color: var(--primary);
+}
+
+/* Nutrition Back Styles */
+.nutrition-list {
+    text-align: left;
+    margin: 1rem 0 1rem 0; /* Reduced bottom margin */
+    font-size: 0.9rem;
+    list-style: none;
+    flex-grow: 1; /* Allow list to take available space if needed, but margin handles the gap */
+}
+
+.nutrition-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.nutrition-list li:last-child {
+    border-bottom: none;
+}
+
+.tap-hint {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: var(--primary);
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.menu-card.flipped {
+    cursor: pointer;
 }
 
 .menu-description {
@@ -939,4 +1026,125 @@ footer {
     .waitlist-form {
         padding: 0 1rem;
     }
+}
+
+/* Instagram Testimonials */
+.testimonials-section {
+    background-color: #fafafa;
+}
+
+.testimonial-feed {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.instagram-card {
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-bottom: 1px solid #efefef;
+}
+
+.instagram-profile-pic {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+}
+
+.instagram-profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-user-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.instagram-user-info .username {
+    font-weight: 600;
+    font-size: 14px;
+    color: #262626;
+}
+
+.instagram-user-info .location {
+    font-size: 12px;
+    color: #262626;
+}
+
+.instagram-menu {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.instagram-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Square image */
+    overflow: hidden;
+}
+
+.instagram-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-actions {
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.instagram-actions span {
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.instagram-actions .action-right span {
+    margin-right: 0;
+}
+
+.instagram-likes {
+    padding: 0 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #262626;
+}
+
+.instagram-content {
+    padding: 0 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #262626;
+    line-height: 1.5;
+}
+
+.instagram-content .username {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.instagram-date {
+    padding: 0 14px 14px 14px;
+    font-size: 10px;
+    color: #8e8e8e;
+    text-transform: uppercase;
 }
