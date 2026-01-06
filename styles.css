@@ -383,7 +383,9 @@ nav a:hover::after {
     padding: 1.5rem; /* Reduced padding */
     border-radius: var(--border-radius-retro);
     border: 2px solid var(--accent);
-    position: relative; 
+    position: absolute; 
+    top: 0;
+    left: 0;
     overflow: hidden;
     
     display: flex;
@@ -391,7 +393,7 @@ nav a:hover::after {
 }
 
 .menu-card-front {
-    /* Removed specific height settings as grid handles it */
+    /* Front face visible by default */
 }
 
 .menu-card-back {
