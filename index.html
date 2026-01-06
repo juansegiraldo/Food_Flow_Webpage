@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Flow - Inteligente. Sostenible. Delicioso.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="docs/dog.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">Food & Flow</h1>
+            <ul>
+                <li><a href="#hero" data-lang="es">Inicio</a><a href="#hero" data-lang="en" class="lang-hidden">Home</a></li>
+                <li><a href="#about" data-lang="es">Nosotros</a><a href="#about" data-lang="en" class="lang-hidden">About</a></li>
+                <li><a href="#menu" data-lang="es">Menú</a><a href="#menu" data-lang="en" class="lang-hidden">Menu</a></li>
+                <li><a href="#tech" data-lang="es">Pedir</a><a href="#tech" data-lang="en" class="lang-hidden">Order</a></li>
+                <li><a href="#location" data-lang="es">Ubicación</a><a href="#location" data-lang="en" class="lang-hidden">Find Us</a></li>
+            </ul>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- FOMO Banner -->
+        <div class="fomo-banner">
+            <span class="fomo-icon">🔥</span>
+            <span class="fomo-text" data-lang="es">Lanzamiento Exclusivo CDMX - Solo 3 Camiones Disponibles</span>
+            <span class="fomo-text lang-hidden" data-lang="en">Exclusive CDMX Launch - Only 3 Trucks Available</span>
+            <span class="bogota-waitlist-count" data-lang="es"><span id="waitlist-count">1500</span> personas esperando en Bogotá</span>
+            <span class="bogota-waitlist-count lang-hidden" data-lang="en"><span id="waitlist-count-en">1500</span> people waiting in Bogotá</span>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="limited-badge" data-lang="es">Orgullosamente Mexicano</div>
+                <div class="limited-badge lang-hidden" data-lang="en">Proudly Mexican</div>
+                <h1 class="hero-title">Food & Flow</h1>
+                <img src="docs/Truck.png" alt="Food & Flow Truck" class="hero-truck-inline">
+                <p class="tagline" data-lang="es">Inteligente. Sostenible. Delicioso.</p>
+                <p class="tagline lang-hidden" data-lang="en">Smart. Sustainable. Delicious.</p>
+                <a href="#location" class="cta-button" data-lang="es">Encuéntranos Hoy</a>
+                <a href="#location" class="cta-button lang-hidden" data-lang="en">Find Us Today</a>
+            </div>
+            <div class="vegetable-pattern"></div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title" data-lang="es">Nosotros</h2>
+                <h2 class="section-title lang-hidden" data-lang="en">About Us</h2>
+                <p class="about-text" data-lang="es">Nacimos en Ciudad de México con un sueño: revolucionar la comida callejera. No somos solo un food truck. Somos un movimiento por una mejor alimentación. Cada bowl está elaborado con ingredientes de origen local, empacado en envases 100% compostables y servido con una sonrisa.</p>
+                <p class="about-text lang-hidden" data-lang="en">We were born in Mexico City with a dream: to revolutionize street food. We're not just a food truck. We're a movement for better eating. Every bowl is crafted with locally-sourced ingredients, packed in 100% compostable packaging, and served with a smile.</p>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h3 data-lang="es">40% Menos Desperdicio</h3>
+                        <h3 class="lang-hidden" data-lang="en">40% Less Food Waste</h3>
+                        <p data-lang="es">Abastecimiento inteligente y control de porciones reducen el desperdicio manteniendo los sabores frescos.</p>
+                        <p class="lang-hidden" data-lang="en">Smart sourcing and portion control reduce waste while keeping flavors fresh.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">♻️</div>
+                        <h3 data-lang="es">Envases 100% Compostables</h3>
+                        <h3 class="lang-hidden" data-lang="en">100% Compostable Packaging</h3>
+                        <p data-lang="es">Cada contenedor, envoltorio y utensilio regresa a la tierra, no al vertedero.</p>
+                        <p class="lang-hidden" data-lang="en">Every container, wrapper, and utensil returns to the earth, not the landfill.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌍</div>
+                        <h3 data-lang="es">Compensación de Carbono: 100 toneladas/año</h3>
+                        <h3 class="lang-hidden" data-lang="en">Carbon Offset: 100 tons/year</h3>
+                        <p data-lang="es">Compensamos toda nuestra huella de carbono a través de programas ambientales verificados.</p>
+                        <p class="lang-hidden" data-lang="en">We offset our entire carbon footprint through verified environmental programs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Preview Section -->
+        <section id="menu" class="section menu-section">
+            <div class="container">
+                <h2 class="section-title" data-lang="es">Nuestros Bowls Signature</h2>
+                <h2 class="section-title lang-hidden" data-lang="en">Our Signature Bowls</h2>
+                <img src="docs/bowl.png" alt="Bowl Signature" class="bowl-image">
+                <p class="menu-note" data-lang="es">El menú rota semanalmente según ingredientes de temporada</p>
+                <p class="menu-note lang-hidden" data-lang="en">Menu rotates weekly based on seasonal ingredients</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <h3 data-lang="es">La Máquina Verde</h3>
+                        <h3 class="lang-hidden" data-lang="en">The Green Machine</h3>
+                        <p class="menu-description" data-lang="es">Aguacate cremoso, brotes frescos y queso crema de hierbas en un bowl integral.</p>
+                        <p class="menu-description lang-hidden" data-lang="en">Creamy avocado, fresh sprouts, and herb cream cheese on a whole grain bowl.</p>
+                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                    </div>
+                    <div class="menu-card">
+                        <h3 data-lang="es">Poder Proteico</h3>
+                        <h3 class="lang-hidden" data-lang="en">Protein Power</h3>
+                        <p class="menu-description" data-lang="es">Salmón ahumado, huevo de gallinas libres, hierbas frescas y una suave crema de eneldo.</p>
+                        <p class="menu-description lang-hidden" data-lang="en">Smoked salmon, free-range egg, fresh herbs, and a light dill spread.</p>
+                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                    </div>
+                    <div class="menu-card">
+                        <h3 data-lang="es">Dulce Comienzo</h3>
+                        <h3 class="lang-hidden" data-lang="en">Sweet Start</h3>
+                        <p class="menu-description" data-lang="es">Mantequilla de almendras, plátano en rodajas, miel local y una pizca de semillas de chía.</p>
+                        <p class="menu-description lang-hidden" data-lang="en">Almond butter, sliced banana, local honey, and a sprinkle of chia seeds.</p>
+                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                    </div>
+                    <div class="menu-card">
+                        <h3 data-lang="es">Fresco del Jardín</h3>
+                        <h3 class="lang-hidden" data-lang="en">Garden Fresh</h3>
+                        <p class="menu-description" data-lang="es">Verduras asadas, hummus, rúcula y un aderezo de tahini ácido.</p>
+                        <p class="menu-description lang-hidden" data-lang="en">Roasted vegetables, hummus, arugula, and a tangy tahini drizzle.</p>
+                        <a href="#" class="nutrition-link" data-lang="es">Ver información nutricional →</a>
+                        <a href="#" class="nutrition-link lang-hidden" data-lang="en">See nutrition info →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Features Section -->
+        <section id="tech" class="section tech-section">
+            <div class="container">
+                <h2 class="section-title" data-lang="es">Pedir Más Inteligente</h2>
+                <h2 class="section-title lang-hidden" data-lang="en">Order Smarter</h2>
+                <p class="section-subtitle" data-lang="es">Experimenta el futuro de pedidos en food trucks</p>
+                <p class="section-subtitle lang-hidden" data-lang="en">Experience the future of food truck ordering</p>
+                
+                <div class="tech-grid">
+                    <div class="tech-feature">
+                        <div class="tech-icon">📱</div>
+                        <h3 data-lang="es">App Móvil</h3>
+                        <h3 class="lang-hidden" data-lang="en">Mobile App</h3>
+                        <p data-lang="es">Pide con anticipación y rastrea tu bowl en tiempo real. Salta la fila, toma y vete.</p>
+                        <p class="lang-hidden" data-lang="en">Pre-order and track your bowl in real-time. Skip the line, grab and go!</p>
+                    </div>
+                    <div class="tech-feature">
+                        <div class="tech-icon">📲</div>
+                        <h3 data-lang="es">Pedidos con Código QR</h3>
+                        <h3 class="lang-hidden" data-lang="en">QR Code Ordering</h3>
+                        <p data-lang="es">Acércate, escanea, pide. No se requiere descargar la app para servicio rápido.</p>
+                        <p class="lang-hidden" data-lang="en">Walk up, scan, order. No app download required for quick service.</p>
+                    </div>
+                    <div class="tech-feature">
+                        <div class="tech-icon">🔔</div>
+                        <h3 data-lang="es">Alertas de Ubicación</h3>
+                        <h3 class="lang-hidden" data-lang="en">Location Alerts</h3>
+                        <p data-lang="es">Recibe notificaciones cuando estemos cerca de tus lugares favoritos en CDMX.</p>
+                        <p class="lang-hidden" data-lang="en">Get push notifications when we're nearby your favorite spots in Mexico City.</p>
+                    </div>
+                    <div class="tech-feature">
+                        <div class="tech-icon">⭐</div>
+                        <h3 data-lang="es">Recompensas de Lealtad</h3>
+                        <h3 class="lang-hidden" data-lang="en">Loyalty Rewards</h3>
+                        <p data-lang="es">Gana puntos con cada pedido. ¡Bowl gratis después de 10 visitas!</p>
+                        <p class="lang-hidden" data-lang="en">Earn points with every order. Free bowl after 10 visits!</p>
+                    </div>
+                </div>
+                
+                <div class="app-mockup">
+                    <div class="mockup-placeholder">
+                        <img src="docs/app_home.png" alt="Food & Flow App Screenshot" class="app-screenshot">
+                        <p class="mockup-text" data-lang="es">Descarga nuestra app para ver ubicación en tiempo real y actualizaciones del menú</p>
+                        <p class="mockup-text lang-hidden" data-lang="en">Download our app to see real-time location and menu updates</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="section location-section">
+            <div class="container">
+                <h2 class="section-title" data-lang="es">Dónde Estaremos</h2>
+                <h2 class="section-title lang-hidden" data-lang="en">Where We'll Be</h2>
+                <p class="location-text" data-lang="es">Nuestros 3 camiones están hoy en las mejores ubicaciones de Ciudad de México: UNAM, Polanco y Santa Fe. ¡Descarga nuestra app para recibir alertas de ubicación en tiempo real!</p>
+                <p class="location-text lang-hidden" data-lang="en">Our 3 trucks are today at the best locations in Mexico City: UNAM, Polanco, and Santa Fe. Download our app to get real-time location alerts!</p>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-container" id="countdown-container">
+                    <div class="countdown-header">
+                        <span class="countdown-icon">⏰</span>
+                        <span data-lang="es">Tiempo Restante</span>
+                        <span class="lang-hidden" data-lang="en">Time Remaining</span>
+                    </div>
+                    
+                    <div class="countdown-timer-wrapper">
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="cd-hours">00</span>
+                            <span class="countdown-label" data-lang="es">Horas</span>
+                            <span class="countdown-label lang-hidden" data-lang="en">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="cd-minutes">00</span>
+                            <span class="countdown-label" data-lang="es">Min</span>
+                            <span class="countdown-label lang-hidden" data-lang="en">Min</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="cd-seconds">00</span>
+                            <span class="countdown-label" data-lang="es">Seg</span>
+                            <span class="countdown-label lang-hidden" data-lang="en">Sec</span>
+                        </div>
+                    </div>
+                    
+                    <div class="countdown-location">
+                        <span data-lang="es">en <span class="location-highlight" id="current-location-name">--</span></span>
+                        <span class="lang-hidden" data-lang="en">at <span class="location-highlight" id="current-location-name-en">--</span></span>
+                        <span data-lang="es"> - ¡No te lo pierdas!</span>
+                        <span class="lang-hidden" data-lang="en"> - Don't miss it!</span>
+                    </div>
+                </div>
+                
+                <div id="map" class="google-map">
+                    <img src="docs/Map3trucks.jpeg" alt="Mapa de Ciudad de México con ubicación de los 3 camiones" class="map-image">
+                </div>
+                <p class="map-note" data-lang="es">📍 Nuestros 3 camiones en Ciudad de México</p>
+                <p class="map-note lang-hidden" data-lang="en">📍 Our 3 trucks in Mexico City</p>
+                
+                <div class="schedule-container">
+                    <h3 data-lang="es">Horario Semanal</h3>
+                    <h3 class="lang-hidden" data-lang="en">Weekly Schedule</h3>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th><span data-lang="es">Día</span><span class="lang-hidden" data-lang="en">Day</span></th>
+                                <th><span data-lang="es">Ubicación</span><span class="lang-hidden" data-lang="en">Location</span></th>
+                                <th><span data-lang="es">Hora</span><span class="lang-hidden" data-lang="en">Time</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span data-lang="es">Lunes</span><span class="lang-hidden" data-lang="en">Monday</span></td>
+                                <td><span data-lang="es">UNAM - Ciudad Universitaria, frente a Facultad de Ciencias</span><span class="lang-hidden" data-lang="en">UNAM - Ciudad Universitaria, in front of Faculty of Sciences</span></td>
+                                <td>8:00 AM - 2:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="es">Martes</span><span class="lang-hidden" data-lang="en">Tuesday</span></td>
+                                <td><span data-lang="es">Polanco - Avenida Presidente Masaryk, cerca de Parque Lincoln</span><span class="lang-hidden" data-lang="en">Polanco - Presidente Masaryk Avenue, near Lincoln Park</span></td>
+                                <td>7:30 AM - 1:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="es">Miércoles</span><span class="lang-hidden" data-lang="en">Wednesday</span></td>
+                                <td><span data-lang="es">Santa Fe - Centro Comercial Santa Fe, entrada principal</span><span class="lang-hidden" data-lang="en">Santa Fe - Santa Fe Shopping Center, main entrance</span></td>
+                                <td>11:00 AM - 4:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="es">Jueves</span><span class="lang-hidden" data-lang="en">Thursday</span></td>
+                                <td><span data-lang="es">UNAM - Ciudad Universitaria, zona de Humanidades</span><span class="lang-hidden" data-lang="en">UNAM - Ciudad Universitaria, Humanities area</span></td>
+                                <td>8:00 AM - 2:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="es">Viernes</span><span class="lang-hidden" data-lang="en">Friday</span></td>
+                                <td><span data-lang="es">Polanco - Avenida Presidente Masaryk, zona corporativa</span><span class="lang-hidden" data-lang="en">Polanco - Presidente Masaryk Avenue, corporate area</span></td>
+                                <td>7:30 AM - 2:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="es">Sábado</span><span class="lang-hidden" data-lang="en">Saturday</span></td>
+                                <td><span data-lang="es">Condesa - Parque México (evento especial)</span><span class="lang-hidden" data-lang="en">Condesa - Parque México (special event)</span></td>
+                                <td>10:00 AM - 5:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="es">Domingo</span><span class="lang-hidden" data-lang="en">Sunday</span></td>
+                                <td><span data-lang="es">Roma Norte - Mercado Roma (evento especial)</span><span class="lang-hidden" data-lang="en">Roma Norte - Mercado Roma (special event)</span></td>
+                                <td>10:00 AM - 5:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pet Friendly Badge -->
+        <section class="pet-friendly">
+            <div class="container">
+                <div class="pet-badge">
+                    <img src="docs/dog.png" alt="Mascota Food & Flow" class="pet-icon">
+                    <p data-lang="es"><strong>¡Mascotas Bienvenidas!</strong> Tazones de agua fresca siempre disponibles.</p>
+                    <p class="lang-hidden" data-lang="en"><strong>Pups Welcome!</strong> Fresh water bowls always available.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bogotá Waitlist Section -->
+        <section id="bogota-waitlist" class="section bogota-section">
+            <div class="container">
+                <h2 class="section-title" data-lang="es">Próximamente en Bogotá</h2>
+                <h2 class="section-title lang-hidden" data-lang="en">Coming Soon to Bogotá</h2>
+                <p class="bogota-text" data-lang="es">¿Eres de Bogotá? Únete a nuestra lista de espera y sé el primero en saber cuando lleguemos. ¡Queremos llevar nuestros bowls sostenibles a la capital colombiana!</p>
+                <p class="bogota-text lang-hidden" data-lang="en">Are you from Bogotá? Join our waitlist and be the first to know when we arrive. We want to bring our sustainable bowls to the Colombian capital!</p>
+                <form class="waitlist-form" id="waitlist-form">
+                    <input type="text" id="waitlist-name" data-placeholder-es="Tu nombre" data-placeholder-en="Your name" required>
+                    <input type="email" id="waitlist-email" data-placeholder-es="Tu email" data-placeholder-en="Your email" required>
+                    <input type="text" id="waitlist-location" data-placeholder-es="Zona de Bogotá (opcional)" data-placeholder-en="Bogotá area (optional)">
+                    <button type="submit" class="waitlist-button">
+                        <span data-lang="es">Únete a la Lista de Espera</span>
+                        <span class="lang-hidden" data-lang="en">Join the Waitlist</span>
+                    </button>
+                </form>
+                <p class="waitlist-success lang-hidden" id="waitlist-success" data-lang="es">¡Gracias! Te notificaremos cuando lleguemos a Bogotá.</p>
+                <p class="waitlist-success lang-hidden" id="waitlist-success-en" data-lang="en">Thank you! We'll notify you when we arrive in Bogotá.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Food & Flow</h3>
+                <p class="footer-tagline" data-lang="es">Inteligente. Sostenible. Delicioso.</p>
+                <p class="footer-tagline lang-hidden" data-lang="en">Smart. Sustainable. Delicious.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4 data-lang="es">Conéctate con Nosotros</h4>
+                <h4 class="lang-hidden" data-lang="en">Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram">📷 Instagram</a>
+                    <a href="#" aria-label="TikTok">🎵 TikTok</a>
+                    <a href="#" aria-label="Twitter">🐦 Twitter/X</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 data-lang="es">Recibe Ofertas Semanales</h4>
+                <h4 class="lang-hidden" data-lang="en">Get Weekly Specials</h4>
+                <form class="email-signup">
+                    <input type="email" data-placeholder-es="Ingresa tu email" data-placeholder-en="Enter your email" required>
+                    <button type="submit"><span data-lang="es">Suscribirse</span><span class="lang-hidden" data-lang="en">Subscribe</span></button>
+                </form>
+            </div>
+            
+            <div class="footer-section">
+                <div class="sustainability-badges">
+                    <span class="badge" data-lang="es">🌱 Sostenible</span>
+                    <span class="badge lang-hidden" data-lang="en">🌱 Sustainable</span>
+                    <span class="badge" data-lang="es">♻️ Cero Desperdicio</span>
+                    <span class="badge lang-hidden" data-lang="en">♻️ Zero Waste</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-lang="es">&copy; 2026 Food & Flow Food Truck by Alsea. Todos los derechos reservados.</p>
+            <p class="lang-hidden" data-lang="en">&copy; 2026 Food & Flow Food Truck by Alsea. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language switcher functionality
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            // Update placeholders
+            function updatePlaceholders(lang) {
+                const inputs = document.querySelectorAll('input[data-placeholder-es]');
+                inputs.forEach(input => {
+                    if (lang === 'es') {
+                        input.placeholder = input.getAttribute('data-placeholder-es');
+                    } else {
+                        input.placeholder = input.getAttribute('data-placeholder-en');
+                    }
+                });
+            }
+            
+            // Show/hide language content
+            function switchLanguage(lang) {
+                // Hide all language-specific content (but not the language buttons)
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    // Skip language buttons
+                    if (el.classList.contains('lang-btn')) {
+                        return;
+                    }
+                    
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.classList.remove('lang-hidden');
+                    } else {
+                        el.classList.add('lang-hidden');
+                    }
+                });
+                
+                // Update active button
+                langButtons.forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Update placeholders
+                updatePlaceholders(lang);
+                
+                // Update HTML lang attribute
+                document.documentElement.lang = lang;
+            }
+            
+            // Add click handlers to language buttons
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = btn.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+            
+            // Initialize with Spanish
+            switchLanguage('es');
+
+            // FOMO Functionality
+            
+            // Schedule data for countdown timer
+            const schedule = [
+                { day: 1, name: 'UNAM - Ciudad Universitaria', nameEn: 'UNAM - Ciudad Universitaria', start: '08:00', end: '14:00' }, // Monday
+                { day: 2, name: 'Polanco - Avenida Presidente Masaryk', nameEn: 'Polanco - Presidente Masaryk Avenue', start: '07:30', end: '13:30' }, // Tuesday
+                { day: 3, name: 'Santa Fe - Centro Comercial Santa Fe', nameEn: 'Santa Fe - Santa Fe Shopping Center', start: '11:00', end: '16:00' }, // Wednesday
+                { day: 4, name: 'UNAM - Ciudad Universitaria', nameEn: 'UNAM - Ciudad Universitaria', start: '08:00', end: '14:00' }, // Thursday
+                { day: 5, name: 'Polanco - Avenida Presidente Masaryk', nameEn: 'Polanco - Presidente Masaryk Avenue', start: '07:30', end: '14:00' }, // Friday
+                { day: 6, name: 'Condesa - Parque México', nameEn: 'Condesa - Parque México', start: '10:00', end: '17:00' }, // Saturday
+                { day: 0, name: 'Roma Norte - Mercado Roma', nameEn: 'Roma Norte - Mercado Roma', start: '10:00', end: '17:00' } // Sunday
+            ];
+
+            // Countdown timer function
+            function updateCountdown() {
+                const now = new Date();
+                const currentDay = now.getDay();
+                
+                // Get today's schedule
+                const todaySchedule = schedule.find(s => s.day === currentDay);
+                
+                if (!todaySchedule) {
+                    document.getElementById('countdown-container').style.display = 'none';
+                    return;
+                }
+
+                // Set end time for today
+                const [endHour, endMinute] = todaySchedule.end.split(':').map(Number);
+                const endTime = new Date(now);
+                endTime.setHours(endHour, endMinute, 0, 0);
+                
+                // If it's already past the end time, hide the countdown
+                if (now >= endTime) {
+                    document.getElementById('countdown-container').style.display = 'none';
+                    return;
+                }
+                
+                // Calculate remaining time
+                const diff = endTime - now;
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                // Update DOM elements
+                const elHours = document.getElementById('cd-hours');
+                const elMinutes = document.getElementById('cd-minutes');
+                const elSeconds = document.getElementById('cd-seconds');
+                
+                if (elHours) elHours.textContent = hours.toString().padStart(2, '0');
+                if (elMinutes) elMinutes.textContent = minutes.toString().padStart(2, '0');
+                if (elSeconds) elSeconds.textContent = seconds.toString().padStart(2, '0');
+                
+                document.getElementById('current-location-name').textContent = todaySchedule.name;
+                document.getElementById('current-location-name-en').textContent = todaySchedule.nameEn;
+                
+                document.getElementById('countdown-container').style.display = 'block';
+            }
+
+            // Update countdown every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Waitlist functionality
+            function loadWaitlistCount() {
+                const waitlist = JSON.parse(localStorage.getItem('foodflow_bogota_waitlist') || '[]');
+                const baseCount = 1500;
+                const count = baseCount + waitlist.length;
+                document.getElementById('waitlist-count').textContent = count;
+                document.getElementById('waitlist-count-en').textContent = count;
+            }
+
+            function saveToWaitlist(name, email, location) {
+                const waitlist = JSON.parse(localStorage.getItem('foodflow_bogota_waitlist') || '[]');
+                const entry = {
+                    name: name,
+                    email: email,
+                    location: location,
+                    date: new Date().toISOString()
+                };
+                waitlist.push(entry);
+                localStorage.setItem('foodflow_bogota_waitlist', JSON.stringify(waitlist));
+                loadWaitlistCount();
+            }
+
+            // Waitlist form handler
+            const waitlistForm = document.getElementById('waitlist-form');
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('waitlist-name').value;
+                    const email = document.getElementById('waitlist-email').value;
+                    const location = document.getElementById('waitlist-location').value;
+                    
+                    saveToWaitlist(name, email, location);
+                    
+                    // Show success message
+                    const successMsg = document.getElementById('waitlist-success');
+                    const successMsgEn = document.getElementById('waitlist-success-en');
+                    const currentLang = document.documentElement.lang;
+                    
+                    if (currentLang === 'es') {
+                        successMsg.classList.remove('lang-hidden');
+                        successMsgEn.classList.add('lang-hidden');
+                    } else {
+                        successMsg.classList.add('lang-hidden');
+                        successMsgEn.classList.remove('lang-hidden');
+                    }
+                    
+                    // Reset form
+                    waitlistForm.reset();
+                    updatePlaceholders(currentLang);
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMsg.classList.add('lang-hidden');
+                        successMsgEn.classList.add('lang-hidden');
+                    }, 5000);
+                });
+            }
+
+            // Initialize waitlist count
+            loadWaitlistCount();
+        });
+    </script>
+</body>
+</html>
