@@ -225,10 +225,10 @@
                 </div>
                 
                 <div id="map" class="google-map">
-                    <img src="docs/Map3trucks.jpeg" alt="Mapa de Ciudad de México con ubicación de los 3 camiones" class="map-image">
+                    <img src="docs/Map3trucks.jpeg" alt="Mapa de Ciudad de México con ubicación de los 3 camiones" class="map-image" id="interactive-map">
                 </div>
-                <p class="map-note" data-lang="es">📍 Nuestros 3 camiones en Ciudad de México</p>
-                <p class="map-note lang-hidden" data-lang="en">📍 Our 3 trucks in Mexico City</p>
+                <p class="map-note" data-lang="es"><img src="docs/TruckMapIcon.png" alt="Truck Icon" style="height: 24px; vertical-align: middle;"> Nuestros 3 camiones en Ciudad de México</p>
+                <p class="map-note lang-hidden" data-lang="en"><img src="docs/TruckMapIcon.png" alt="Truck Icon" style="height: 24px; vertical-align: middle;"> Our 3 trucks in Mexico City</p>
                 
                 <div class="schedule-container">
                     <h3 data-lang="es">Horario Semanal</h3>
@@ -362,6 +362,135 @@
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Interactive Map Functionality
+            const mapContainer = document.getElementById('map');
+            const mapImage = document.getElementById('interactive-map');
+            
+            if (mapContainer && mapImage) {
+                let scale = 1;
+                let panning = false;
+                let pointX = 0;
+                let pointY = 0;
+                let startX = 0;
+                let startY = 0;
+                
+                // Zoom transform logic
+                function setTransform() {
+                    mapImage.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+                }
+                
+                // Mouse wheel zoom
+                mapContainer.addEventListener('wheel', function(e) {
+                    e.preventDefault();
+                    
+                    const xs = (e.clientX - pointX) / scale;
+                    const ys = (e.clientY - pointY) / scale;
+                    
+                    const delta = -Math.sign(e.deltaY);
+                    
+                    // Limit zoom speed
+                    const newScale = Math.min(Math.max(1, scale + delta * 0.1), 3);
+                    
+                    if (newScale !== scale) {
+                        // Calculate new position to zoom towards cursor
+                        // Note: This simple calculation centers the zoom, 
+                        // refined logic would be needed for perfect cursor-centered zoom with pan limits
+                        // For now, simpler zoom logic to prevent image flying away
+                        
+                        if (newScale === 1) {
+                            pointX = 0;
+                            pointY = 0;
+                        }
+                        
+                        scale = newScale;
+                        setTransform();
+                    }
+                });
+                
+                // Mouse Drag (Pan)
+                mapImage.addEventListener('mousedown', function(e) {
+                    if (scale > 1) {
+                        e.preventDefault();
+                        startX = e.clientX - pointX;
+                        startY = e.clientY - pointY;
+                        panning = true;
+                        mapImage.style.cursor = 'grabbing';
+                    }
+                });
+                
+                document.addEventListener('mouseup', function() {
+                    panning = false;
+                    mapImage.style.cursor = 'grab';
+                });
+                
+                document.addEventListener('mousemove', function(e) {
+                    if (!panning) return;
+                    e.preventDefault();
+                    pointX = e.clientX - startX;
+                    pointY = e.clientY - startY;
+                    setTransform();
+                });
+                
+                // Touch Gestures for Mobile (Pinch Zoom & Pan)
+                let initialDistance = 0;
+                let initialScale = 1;
+                
+                mapContainer.addEventListener('touchstart', function(e) {
+                    if (e.touches.length === 2) {
+                        // Pinch started
+                        e.preventDefault();
+                        initialDistance = Math.hypot(
+                            e.touches[0].pageX - e.touches[1].pageX,
+                            e.touches[0].pageY - e.touches[1].pageY
+                        );
+                        initialScale = scale;
+                    } else if (e.touches.length === 1 && scale > 1) {
+                        // Pan started
+                        startX = e.touches[0].clientX - pointX;
+                        startY = e.touches[0].clientY - pointY;
+                        panning = true;
+                    }
+                });
+                
+                mapContainer.addEventListener('touchmove', function(e) {
+                    if (e.touches.length === 2) {
+                        // Pinch zooming
+                        e.preventDefault();
+                        const currentDistance = Math.hypot(
+                            e.touches[0].pageX - e.touches[1].pageX,
+                            e.touches[0].pageY - e.touches[1].pageY
+                        );
+                        
+                        if (initialDistance > 0) {
+                            const diff = currentDistance / initialDistance;
+                            scale = Math.min(Math.max(1, initialScale * diff), 3);
+                            
+                            if (scale === 1) {
+                                pointX = 0;
+                                pointY = 0;
+                            }
+                            
+                            setTransform();
+                        }
+                    } else if (e.touches.length === 1 && panning && scale > 1) {
+                        // Panning
+                        e.preventDefault();
+                        pointX = e.touches[0].clientX - startX;
+                        pointY = e.touches[0].clientY - startY;
+                        setTransform();
+                    }
+                });
+                
+                mapContainer.addEventListener('touchend', function(e) {
+                    if (e.touches.length < 2) {
+                        initialDistance = 0;
+                    }
+                    if (e.touches.length === 0) {
+                        panning = false;
+                    }
+                });
+            }
+
             // Language switcher functionality
             const langButtons = document.querySelectorAll('.lang-btn');
             
