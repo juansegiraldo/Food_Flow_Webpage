@@ -14,14 +14,14 @@
     <header>
         <nav>
             <div class="logo-container">
-                <div class="header-brand-icons">
-                    <img src="./docs/bowl.png" alt="Bowl" class="floating-icon icon-bowl">
-                    <img src="./docs/dog.png" alt="Dog" class="floating-icon icon-dog">
-                    <img src="./docs/TruckMapIcon.png" alt="Truck" class="floating-icon icon-truck">
-                </div>
                 <h1 class="logo">Food & Flow</h1>
             </div>
-            <ul>
+            <button class="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
                 <li><a href="#hero" data-lang="es">Inicio</a><a href="#hero" data-lang="en" class="lang-hidden">Home</a></li>
                 <li><a href="#about" data-lang="es">Nosotros</a><a href="#about" data-lang="en" class="lang-hidden">About</a></li>
                 <li><a href="#menu" data-lang="es">Menú</a><a href="#menu" data-lang="en" class="lang-hidden">Menu</a></li>
@@ -225,28 +225,24 @@
                 
                 <div class="tech-grid">
                     <div class="tech-feature">
-                        <div class="tech-icon">📱</div>
                         <h3 data-lang="es">App Móvil</h3>
                         <h3 class="lang-hidden" data-lang="en">Mobile App</h3>
                         <p data-lang="es">Pide con anticipación y rastrea tu bowl en tiempo real. Salta la fila, toma y vete.</p>
                         <p class="lang-hidden" data-lang="en">Pre-order and track your bowl in real-time. Skip the line, grab and go!</p>
                     </div>
                     <div class="tech-feature">
-                        <div class="tech-icon">📲</div>
                         <h3 data-lang="es">Pedidos con Código QR</h3>
                         <h3 class="lang-hidden" data-lang="en">QR Code Ordering</h3>
                         <p data-lang="es">Acércate, escanea, pide. No se requiere descargar la app para servicio rápido.</p>
                         <p class="lang-hidden" data-lang="en">Walk up, scan, order. No app download required for quick service.</p>
                     </div>
                     <div class="tech-feature">
-                        <div class="tech-icon">🔔</div>
                         <h3 data-lang="es">Alertas de Ubicación</h3>
                         <h3 class="lang-hidden" data-lang="en">Location Alerts</h3>
                         <p data-lang="es">Recibe notificaciones cuando estemos cerca de tus lugares favoritos en CDMX.</p>
                         <p class="lang-hidden" data-lang="en">Get push notifications when we're nearby your favorite spots in Mexico City.</p>
                     </div>
                     <div class="tech-feature">
-                        <div class="tech-icon">⭐</div>
                         <h3 data-lang="es">Recompensas de Lealtad</h3>
                         <h3 class="lang-hidden" data-lang="en">Loyalty Rewards</h3>
                         <p data-lang="es">Gana puntos con cada pedido. ¡Bowl gratis después de 10 visitas!</p>
@@ -309,8 +305,8 @@
                 <div id="map" class="google-map">
                     <img src="./docs/Map3trucks.jpeg" alt="Mapa de Ciudad de México con ubicación de los 3 camiones" class="map-image" id="interactive-map">
                 </div>
-                <p class="map-note" data-lang="es"><img src="./docs/TruckMapIcon.png" alt="Truck Icon" style="height: 24px; vertical-align: middle;"> Nuestros 3 camiones en Ciudad de México</p>
-                <p class="map-note lang-hidden" data-lang="en"><img src="./docs/TruckMapIcon.png" alt="Truck Icon" style="height: 24px; vertical-align: middle;"> Our 3 trucks in Mexico City</p>
+                <p class="map-note" data-lang="es"><img src="./docs/TruckMapIcon.png" alt="Truck Icon" style="height: 72px; vertical-align: middle;"> Nuestros 3 camiones en Ciudad de México</p>
+                <p class="map-note lang-hidden" data-lang="en"><img src="./docs/TruckMapIcon.png" alt="Truck Icon" style="height: 72px; vertical-align: middle;"> Our 3 trucks in Mexico City</p>
                 
                 <div class="schedule-container">
                     <h3 data-lang="es">Horario Semanal</h3>
@@ -503,20 +499,11 @@
                     <button type="submit"><span data-lang="es">Suscribirse</span><span class="lang-hidden" data-lang="en">Subscribe</span></button>
                 </form>
             </div>
-            
-            <div class="footer-section">
-                <div class="sustainability-badges">
-                    <span class="badge" data-lang="es">🌱 Sostenible</span>
-                    <span class="badge lang-hidden" data-lang="en">🌱 Sustainable</span>
-                    <span class="badge" data-lang="es">♻️ Cero Desperdicio</span>
-                    <span class="badge lang-hidden" data-lang="en">♻️ Zero Waste</span>
-                </div>
-            </div>
         </div>
         
         <div class="footer-bottom">
-            <p data-lang="es">&copy; 2026 Food & Flow Food Truck by Alsea. Todos los derechos reservados.</p>
-            <p class="lang-hidden" data-lang="en">&copy; 2026 Food & Flow Food Truck by Alsea. All rights reserved.</p>
+            <p data-lang="es">&copy; 2026 Food & Flow Truck by Alsea. Todos los derechos reservados.</p>
+            <p class="lang-hidden" data-lang="en">&copy; 2026 Food & Flow Truck by Alsea. All rights reserved.</p>
         </div>
     </footer>
     <script>
@@ -563,6 +550,41 @@
         
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll behavior (solo desktop)
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                
+                // Solo aplicar minimal en desktop (> 768px)
+                if (window.innerWidth > 768) {
+                    if (currentScroll > 100) {
+                        header.classList.add('minimal');
+                    } else {
+                        header.classList.remove('minimal');
+                    }
+                }
+            });
+            
+            // Hamburger Menu Logic
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+            
             // Interactive Map Functionality
             const mapContainer = document.getElementById('map');
             const mapImage = document.getElementById('interactive-map');

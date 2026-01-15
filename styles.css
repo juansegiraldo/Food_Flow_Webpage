@@ -94,6 +94,27 @@ header {
     z-index: 1000;
     border-bottom: 3px solid var(--primary);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
 }
 
 nav {
@@ -122,11 +143,13 @@ nav {
     margin: 0;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     gap: 1.5rem;
     align-items: center;
     margin: 0;
+    list-style: none;
+    padding: 0;
 }
 
 nav a {
@@ -325,6 +348,78 @@ nav a:hover::after {
     margin-bottom: 1rem;
 }
 
+/* Features Section */
+.features-section {
+    background-color: var(--white);
+    border-top: 4px solid var(--pop-mint);
+    border-bottom: 4px solid var(--pop-mint);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Los primeros 3 elementos ocupan 2 columnas cada uno */
+.feature-card:nth-child(1) {
+    grid-column: 1 / 3;
+}
+
+.feature-card:nth-child(2) {
+    grid-column: 3 / 5;
+}
+
+.feature-card:nth-child(3) {
+    grid-column: 5 / 7;
+}
+
+/* Los últimos 2 elementos ocupan 2 columnas cada uno, centrados */
+.feature-card:nth-child(4) {
+    grid-column: 2 / 4;
+}
+
+.feature-card:nth-child(5) {
+    grid-column: 4 / 6;
+}
+
+.feature-card {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius-retro);
+    text-align: center;
+    border: 2px solid var(--primary);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hard);
+}
+
+.feature-icon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--text);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
 /* Menu Section */
 .menu-section {
     background-color: var(--secondary);
@@ -390,10 +485,6 @@ nav a:hover::after {
     
     display: flex;
     flex-direction: column;
-}
-
-.menu-card-front {
-    /* Front face visible by default */
 }
 
 .menu-card-back {
@@ -613,7 +704,7 @@ nav a:hover::after {
 }
 
 .pet-icon {
-    width: 60px;
+    width: 120px;
     height: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -721,8 +812,7 @@ footer {
     gap: 1rem;
     flex-wrap: wrap;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 99;
     border-bottom: 3px solid var(--primary);
 }
@@ -984,22 +1074,94 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    /* Header móvil compacto */
+    header {
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+    
+    nav {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0 15px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-bottom: 3px solid var(--primary);
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .lang-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Fomo banner - removed sticky behavior */
+    .fomo-banner {
+        /* position: fixed; REMOVED */
+        /* top: -100%; REMOVED */
+        left: 0;
+        right: 0;
+        /* z-index: 999; REMOVED */
+        transition: top 0.3s ease;
+    }
+    
     .hero-title {
         font-size: 3rem;
     }
     
     .hero-content {
         padding: 1.5rem;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
     }
     
     .tech-section {
@@ -1027,6 +1189,18 @@ footer {
 
     .waitlist-form {
         padding: 0 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card:nth-child(1),
+    .feature-card:nth-child(2),
+    .feature-card:nth-child(3),
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(5) {
+        grid-column: 1;
     }
 }
 
@@ -1149,4 +1323,24 @@ footer {
     font-size: 10px;
     color: #8e8e8e;
     text-transform: uppercase;
+}
+
+/* Minimal Header Styles - solo en desktop */
+@media (min-width: 769px) {
+    header.minimal {
+        padding: 0.5rem 0;
+    }
+
+    header.minimal .nav-links,
+    header.minimal .language-selector {
+        display: none;
+    }
+
+    header.minimal nav {
+        justify-content: center;
+    }
+
+    header.minimal .logo-container {
+        margin: 0;
+    }
 }
